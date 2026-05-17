@@ -1,0 +1,1606 @@
+<!doctype html>
+
+<html class="scroll-smooth" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Adlux Pharmaceuticals | Precision in Every Pill</title>
+    <link rel="icon" href="Adlux_logo.png" type="image/png" />
+    <link rel="apple-touch-icon" href="Adlux_logo.png" />
+    <meta property="og:image" content="Adlux_logo.png" />
+    <meta name="twitter:image" content="Adlux_logo.png" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-high": "#e6e8ea",
+              "inverse-surface": "#2d3133",
+              "secondary-fixed": "#d5e3fc",
+              "on-error": "#ffffff",
+              "tertiary-fixed-dim": "#ffb2bd",
+              "surface-dim": "#d8dadc",
+              surface: "#f7f9fb",
+              "on-secondary-container": "#57657a",
+              "on-surface": "#191c1e",
+              "tertiary-fixed": "#ffd9dd",
+              "outline-variant": "#bdcaba",
+              background: "#f7f9fb",
+              "tertiary-container": "#c64865",
+              "deep-slate": "#1E293B",
+              tertiary: "#a62f4d",
+              "on-tertiary-fixed": "#400013",
+              "glass-stroke": "rgba(255, 255, 255, 0.4)",
+              "surface-tint": "#006d30",
+              "on-secondary": "#ffffff",
+              "primary-fixed-dim": "#64de81",
+              "mint-green": "#D1FAE5",
+              "on-secondary-fixed-variant": "#3a485b",
+              "surface-container-low": "#f2f4f6",
+              "surface-variant": "#e0e3e5",
+              "surface-container": "#eceef0",
+              "on-secondary-fixed": "#0d1c2e",
+              "secondary-container": "#d5e3fc",
+              primary: "#006b2e",
+              "secondary-fixed-dim": "#b9c7df",
+              outline: "#6e7a6d",
+              "primary-container": "#00873c",
+              "inverse-on-surface": "#eff1f3",
+              "surface-bright": "#f7f9fb",
+              secondary: "#515f74",
+              "error-container": "#ffdad6",
+              "on-primary-fixed": "#00210a",
+              "surface-container-highest": "#e0e3e5",
+              "on-primary-container": "#f7fff3",
+              "inverse-primary": "#64de81",
+              "on-primary-fixed-variant": "#005322",
+              "on-surface-variant": "#3e4a3e",
+              "on-background": "#191c1e",
+              "on-primary": "#ffffff",
+              "on-tertiary-fixed-variant": "#891839",
+              "on-error-container": "#93000a",
+              "on-tertiary": "#ffffff",
+              error: "#ba1a1a",
+              "primary-fixed": "#81fb9b",
+              "surface-container-lowest": "#ffffff",
+              "soft-teal": "#2DD4BF",
+              "on-tertiary-container": "#fffbff",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              "2xl": "1.5rem",
+              full: "9999px",
+            },
+            spacing: {
+              gutter: "24px",
+              "margin-desktop": "48px",
+              "margin-mobile": "16px",
+              base: "8px",
+              "container-max": "1280px",
+            },
+            fontFamily: {
+              "headline-lg": ["Montserrat"],
+              "body-md": ["Inter"],
+              "body-lg": ["Inter"],
+              "headline-xl": ["Montserrat"],
+              "label-md": ["Inter"],
+              "headline-xl-mobile": ["Montserrat"],
+              "headline-md": ["Montserrat"],
+            },
+            fontSize: {
+              "headline-lg": [
+                "32px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+              "headline-xl": [
+                "48px",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "label-md": ["14px", { lineHeight: "1.2", fontWeight: "600" }],
+              "headline-xl-mobile": [
+                "32px",
+                { lineHeight: "1.2", fontWeight: "700" },
+              ],
+              "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .glassmorphism {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+      }
+
+      .soft-shadow {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      }
+
+      .action-hover {
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .action-hover:hover {
+        transform: scale(1.02);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+      }
+
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      .reveal-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .reveal-on-scroll.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .fly-in-left {
+        opacity: 0;
+        transform: translateX(-150px) rotate(-10deg);
+        transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+
+      .fly-in-left.is-visible {
+        opacity: 1;
+        transform: translateX(0) rotate(0);
+      }
+      /* Mobile Nav */
+      .mobile-nav-overlay {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .mobile-nav-overlay.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      .hamburger-line {
+        width: 22px;
+        height: 2px;
+        background: #191c1e;
+        transition: all 0.3s ease;
+        border-radius: 2px;
+      }
+      .hamburger.active .hamburger-line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      .hamburger.active .hamburger-line:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger.active .hamburger-line:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+    </style>
+  </head>
+
+  <body class="bg-background text-on-surface font-body-md antialiased">
+    <!-- TopNavBar -->
+    <div
+      class="fixed top-0 md:top-6 left-0 right-0 z-50 px-0 md:px-8 w-full pointer-events-none"
+    >
+      <header
+        class="w-full md:max-w-container-max mx-auto glassmorphism rounded-none md:rounded-full h-16 md:h-20 flex items-center justify-between px-6 md:px-8 shadow-sm pointer-events-auto relative"
+      >
+        <a class="flex items-center z-10" href="#"
+          ><img src="Adlux_logo.png" alt="Adlux" class="h-8 md:h-10 w-auto"
+        /></a>
+        <nav class="hidden md:flex items-center gap-8">
+          <a
+            class="nav-link font-headline-md text-label-md text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1"
+            href="#home"
+            >Home</a
+          >
+          <a
+            class="nav-link font-headline-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors border-b-2 border-transparent pb-1"
+            href="#about"
+            >About Us</a
+          >
+          <a
+            class="nav-link font-headline-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors border-b-2 border-transparent pb-1"
+            href="#products"
+            >Products</a
+          >
+          <a
+            class="nav-link font-headline-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors border-b-2 border-transparent pb-1"
+            href="#quality"
+            >Quality</a
+          >
+          <a
+            class="nav-link font-headline-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors border-b-2 border-transparent pb-1"
+            href="#contact"
+            >Contact Us</a
+          >
+        </nav>
+        <!-- Hamburger Button (mobile) -->
+        <button
+          class="hamburger md:hidden flex flex-col gap-[5px] items-center justify-center w-10 h-10 rounded-full hover:bg-surface-variant/30 transition-colors z-10"
+          id="hamburger-btn"
+          aria-label="Menu"
+        >
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </header>
+      <!-- Mobile Nav Overlay -->
+      <div
+        class="mobile-nav-overlay md:hidden w-full mx-auto glassmorphism rounded-none rounded-b-3xl p-6 shadow-lg pointer-events-auto"
+        id="mobile-nav"
+      >
+        <nav class="flex flex-col gap-4">
+          <a
+            class="font-headline-md text-base text-on-surface hover:text-primary transition-colors py-2 border-b border-surface-variant/30"
+            href="#home"
+            onclick="closeMobileNav()"
+            >Home</a
+          >
+          <a
+            class="font-headline-md text-base text-on-surface hover:text-primary transition-colors py-2 border-b border-surface-variant/30"
+            href="#about"
+            onclick="closeMobileNav()"
+            >About Us</a
+          >
+          <a
+            class="font-headline-md text-base text-on-surface hover:text-primary transition-colors py-2 border-b border-surface-variant/30"
+            href="products.html"
+            >Products</a
+          >
+          <a
+            class="font-headline-md text-base text-on-surface hover:text-primary transition-colors py-2 border-b border-surface-variant/30"
+            href="#quality"
+            onclick="closeMobileNav()"
+            >Quality</a
+          >
+          <a
+            class="font-headline-md text-base text-on-surface hover:text-primary transition-colors py-2"
+            href="#contact"
+            onclick="closeMobileNav()"
+            >Contact Us</a
+          >
+        </nav>
+      </div>
+    </div>
+    <main class="pt-24">
+      <!-- Hero Section -->
+      <section
+        id="home"
+        class="relative pt-12 pb-16 overflow-hidden bg-surface"
+      >
+        <div class="max-w-container-max mx-auto px-gutter">
+          <!-- Top Row: Headline & Left Elements -->
+          <div
+            class="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-16 mb-16"
+          >
+            <!-- Left side (Avatars & Learn More) -->
+            <div class="flex flex-col gap-12 md:w-1/4 pt-6 hidden md:flex">
+              <div class="flex items-center gap-6">
+                <div class="grid grid-cols-2 gap-2 w-16">
+                  <img
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuABfhhjrRsbt6mzXL6enxZmN8tPsG4B4x3KTugrc5G1GOV_eklBO6Ri9PuHPUalhUpJ60EX7VPQrc4d4x9np4jCWT2FcRutI95R45S0EzjQzDh1EpyL1vpx9GnC7SE0vNOSPXg41-XmX6TPB74RiWzIc9BKjCauwZJrmPa85jPIbjXwceWvRes3We7ce8aCuKcBVTlG8ra8LRcQWPZWUG9CtDoYb35jmzUgdSHHpeJZScx9g13eMo8yWofpXtW_g9Hntnu4jqJvzlU"
+                    class="hero-avatar w-7 h-7 rounded-full object-cover"
+                  />
+                  <img
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA96gDrZSc4qLZFT7n_nQp5PDR1xl6YbW092ILW0VjCKvR8WeOLYK3JXWSLhC0i8BiRcb_gQ833ewBnL-U2-2iT65kmHDhh3yXG7hY4j-Oxi4yGCC8UbYQdxHWJLpalvigyicBkLJXb06dt7POaMaVaeMiO3YG8HJQg9Bz828WAZUhw9z942a9E_3HPU0mYBpk0CCcAM9-6aZDXbPSD3IQquU1_rV5eR5jsVOM5i9ku355_gR6jsOS7hFGOf9aBbsMFchu-ay3FPRA"
+                    class="hero-avatar w-7 h-7 rounded-full object-cover"
+                  />
+                  <img
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCO36ZK2Bi9x-hmpeFmMPfWM0MnOS6GZjviqiuOJ-5h55x-oQ_rlX4gX8BNcNJk0v_WI4qeUz-PmBbIiN1TYOQM-xwpCX-2EnBc76LyRSJ9e0b8SjuYharTm2_eU61vnPwH-FlhmrzNhps60dOsvSiImUuStK_uuRtY7FKOimk7wBrQ1VOpU4Ov3AScfgcE-I7hODIj6Scq6p1T8JnbiEdLMWeqJ8i4uC34cyJEvTX048gU9xak0yX8-XUqacfjIL4ovCyAxd672AI"
+                    class="hero-avatar w-7 h-7 rounded-full object-cover"
+                  />
+                  <div
+                    class="hero-avatar w-7 h-7 rounded-full bg-primary flex items-center justify-center text-white text-[12px] font-bold"
+                  >
+                    +
+                  </div>
+                </div>
+                <!-- Dots -->
+                <div class="flex flex-col gap-1.5" id="hero-dots">
+                  <div
+                    class="hero-dot w-1.5 h-1.5 rounded-full bg-surface-variant transition-colors duration-500"
+                  ></div>
+                  <div
+                    class="hero-dot w-1.5 h-1.5 rounded-full bg-surface-variant transition-colors duration-500"
+                  ></div>
+                  <div
+                    class="hero-dot w-1.5 h-1.5 rounded-full bg-on-surface transition-colors duration-500"
+                  ></div>
+                </div>
+              </div>
+
+              <a
+                href="products.html"
+                class="flex items-center text-on-surface hover:text-primary transition-colors group cursor-pointer w-max relative"
+              >
+                <span
+                  class="material-symbols-outlined font-light text-3xl group-hover:translate-x-2 transition-transform absolute -left-8 text-on-surface-variant"
+                  >arrow_right_alt</span
+                >
+                <span
+                  class="text-label-md border border-glass-stroke rounded-full px-6 py-2 glassmorphism inline-block ml-4"
+                  >Learn More</span
+                >
+              </a>
+            </div>
+
+            <!-- Headline -->
+            <div class="md:w-3/4 text-center md:text-left">
+              <h1
+                class="text-5xl md:text-[4rem] lg:text-[4rem] font-headline-lg font-light italic text-on-surface tracking-tight leading-[1.2]"
+              >
+                Beyond the <span style="color: #047857">Pill</span>,<br />
+                Your Caring
+                <span>
+                  <span style="color: #047857">Pharmacy</span>
+                  <span
+                    class="inline-block align-middle mx-2 md:mx-4 w-24 md:w-32 h-10 md:h-16 rounded-full overflow-hidden border border-glass-stroke soft-shadow bg-surface-variant/20"
+                  >
+                    <img
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXO1xEwOHsb304hw9LVyxiMM44BPZDvt-NTm-7Itvjh_x6Y_gMW400i4atJOKcB256VHvvrpsLHPlDzAZ--MSCGSRw39QDrYAB6a5Wr3JH277eDQMoHrqqvg9CCi6sFHvZv58dYTP5Au0Xho5eRsLmPV7jrYl1vraCPth8PUjRzCJGTPS9VPbN48oAlrrLoV4oi6csEl7PaEEa36ZPBKHJ6Krx8mhmOFUvp26lRWuo6a3GAewoM9vFc5TrNdrEGzcq3NfQYgAO8jo"
+                      alt=""
+                      class="w-full h-full object-cover"
+                    />
+                  </span>
+                  <a
+                    href="products.html"
+                    class="inline-flex items-center align-middle h-10 md:h-16 px-4 md:px-6 rounded-full border border-glass-stroke soft-shadow bg-white hover:bg-mint-green/30 transition-colors cursor-pointer group mt-4 md:mt-0"
+                  >
+                    <span
+                      class="font-sans text-xs md:text-sm font-medium not-italic tracking-normal text-on-surface whitespace-nowrap"
+                      >Explore Products</span
+                    >
+                    <span
+                      class="material-symbols-outlined ml-2 text-[16px] md:text-[20px] text-primary group-hover:translate-x-1 transition-transform"
+                      >arrow_forward</span
+                    >
+                  </a>
+                </span>
+              </h1>
+            </div>
+          </div>
+
+          <!-- Partner Logos -->
+          <div
+            class="flex flex-wrap justify-center md:justify-between items-center gap-6 md:gap-4 opacity-40 grayscale hover:grayscale-0 transition-all duration-500 mb-16 px-4"
+          >
+            <span class="font-headline-md text-xl tracking-widest font-bold"
+              >Niscala.io</span
+            >
+            <span class="font-headline-md text-xl tracking-widest font-bold"
+              >SAMTIV</span
+            >
+            <div class="flex items-center gap-1">
+              <span class="material-symbols-outlined">ac_unit</span
+              ><span class="font-headline-md text-xl tracking-widest font-bold"
+                >IEA.</span
+              >
+            </div>
+            <span class="font-headline-md text-xl tracking-widest font-bold"
+              >SLAVA</span
+            >
+            <span
+              class="font-headline-md text-xl tracking-widest font-bold flex items-center gap-1"
+              ><span class="material-symbols-outlined text-[16px]">diamond</span
+              >UNICA</span
+            >
+            <span
+              class="font-headline-md text-xl tracking-widest font-bold border-l-4 border-current pl-2"
+              >BOKING</span
+            >
+          </div>
+
+          <!-- Bottom Row: Image + Text block -->
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <!-- Left side (Image & Cards) -->
+            <div
+              class="lg:col-span-2 relative h-[260px] md:h-[320px] lg:h-[340px] mb-12 lg:mb-0"
+            >
+              <!-- Background Wrapper -->
+              <div
+                class="absolute inset-0 rounded-[2rem] overflow-hidden bg-mint-green/20"
+              >
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXO1xEwOHsb304hw9LVyxiMM44BPZDvt-NTm-7Itvjh_x6Y_gMW400i4atJOKcB256VHvvrpsLHPlDzAZ--MSCGSRw39QDrYAB6a5Wr3JH277eDQMoHrqqvg9CCi6sFHvZv58dYTP5Au0Xho5eRsLmPV7jrYl1vraCPth8PUjRzCJGTPS9VPbN48oAlrrLoV4oi6csEl7PaEEa36ZPBKHJ6Krx8mhmOFUvp26lRWuo6a3GAewoM9vFc5TrNdrEGzcq3NfQYgAO8jo"
+                  class="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-50"
+                  alt="Molecular Background"
+                />
+              </div>
+
+              <!-- Floating Card 1 -->
+              <div
+                class="absolute -bottom-4 md:-bottom-6 left-4 md:left-12 glassmorphism p-5 rounded-[1.5rem] flex flex-col gap-5 soft-shadow bg-white w-[220px] md:w-[260px] z-10"
+              >
+                <div class="flex gap-4">
+                  <img
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA96gDrZSc4qLZFT7n_nQp5PDR1xl6YbW092ILW0VjCKvR8WeOLYK3JXWSLhC0i8BiRcb_gQ833ewBnL-U2-2iT65kmHDhh3yXG7hY4j-Oxi4yGCC8UbYQdxHWJLpalvigyicBkLJXb06dt7POaMaVaeMiO3YG8HJQg9Bz828WAZUhw9z942a9E_3HPU0mYBpk0CCcAM9-6aZDXbPSD3IQquU1_rV5eR5jsVOM5i9ku355_gR6jsOS7hFGOf9aBbsMFchu-ay3FPRA"
+                    class="w-14 h-14 md:w-16 md:h-16 rounded-xl object-cover"
+                    alt="Dr. Wasly Morgan"
+                  />
+                  <div>
+                    <h4
+                      class="font-headline-md text-sm md:text-label-md text-on-surface font-bold"
+                    >
+                      Dr. Wasly Morgan
+                    </h4>
+                    <p
+                      class="text-[11px] md:text-[12px] text-on-surface-variant"
+                    >
+                      Cardiologist
+                    </p>
+                    <div
+                      class="flex gap-2 md:gap-4 mt-2 text-[10px] md:text-[11px] text-on-surface-variant"
+                    >
+                      <div>
+                        <span class="font-bold text-on-surface">15y</span> Exp.
+                      </div>
+                      <div>
+                        <span class="font-bold text-on-surface">1,548</span>
+                        Patient
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex justify-between items-center w-full">
+                  <div class="flex gap-2">
+                    <div
+                      class="w-6 h-6 rounded-full bg-orange-50 text-orange-400 flex items-center justify-center"
+                    >
+                      <span class="material-symbols-outlined text-[14px]"
+                        >all_inclusive</span
+                      >
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-red-50 text-red-400 flex items-center justify-center"
+                    >
+                      <span class="material-symbols-outlined text-[14px]"
+                        >shield</span
+                      >
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-purple-50 text-purple-400 flex items-center justify-center"
+                    >
+                      <span class="material-symbols-outlined text-[14px]"
+                        >coronavirus</span
+                      >
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-1 opacity-50">
+                    <div class="h-[1px] w-12 bg-on-surface-variant"></div>
+                    <span
+                      class="material-symbols-outlined text-on-surface-variant font-light text-[16px]"
+                      >arrow_forward_ios</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Floating Card 2 -->
+              <div
+                class="absolute -bottom-10 md:-bottom-14 right-4 md:right-12 glassmorphism p-5 rounded-[1.5rem] flex flex-col gap-5 soft-shadow bg-white w-[220px] md:w-[260px] z-10 hidden sm:flex"
+              >
+                <div class="flex gap-4">
+                  <img
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4mi_imjpBswdZjBGKLsIygPKKqc-tVuGUDIJD-WM4_Pr3jAhZQX38VrPm-07JYic5R-1GaclfAR27ZUyZK_PWAzotH0HI2T8A80B5k9gyRtOJXpUNirV2NAb3mXmVMTXWmR1zqsToMggZ3Tc6Ru0izIT8dCX4juoX2B1jtmUKvSpBywyJKODsUAGouripv9903YT-80_xJGFgqfhAQzN9nfB4qwWIk9zYSwJ0HeG5Y-XW9C2jxs-wAgM-O8n7LzeIpnLiy0blOl8"
+                    class="w-14 h-14 md:w-16 md:h-16 rounded-xl object-cover"
+                    alt="Dr. Michael Thompson"
+                  />
+                  <div>
+                    <h4
+                      class="font-headline-md text-sm md:text-label-md text-on-surface font-bold"
+                    >
+                      Dr. Michael Thompson
+                    </h4>
+                    <p
+                      class="text-[11px] md:text-[12px] text-on-surface-variant"
+                    >
+                      Oncologist
+                    </p>
+                    <div
+                      class="flex gap-2 md:gap-4 mt-2 text-[10px] md:text-[11px] text-on-surface-variant"
+                    >
+                      <div>
+                        <span class="font-bold text-on-surface">20y</span> Exp.
+                      </div>
+                      <div>
+                        <span class="font-bold text-on-surface">3,948</span>
+                        Patient
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex justify-between items-center w-full">
+                  <div class="flex gap-2">
+                    <div
+                      class="w-6 h-6 rounded-full bg-purple-50 text-purple-400 flex items-center justify-center"
+                    >
+                      <span class="material-symbols-outlined text-[14px]"
+                        >coronavirus</span
+                      >
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-yellow-50 text-yellow-500 flex items-center justify-center"
+                    >
+                      <span class="material-symbols-outlined text-[14px]"
+                        >star</span
+                      >
+                    </div>
+                    <div
+                      class="w-6 h-6 rounded-full bg-red-50 text-red-400 flex items-center justify-center"
+                    >
+                      <span class="material-symbols-outlined text-[14px]"
+                        >favorite</span
+                      >
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-1 opacity-50">
+                    <div class="h-[1px] w-12 bg-on-surface-variant"></div>
+                    <span
+                      class="material-symbols-outlined text-on-surface-variant font-light text-[16px]"
+                      >arrow_forward_ios</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right side (Info & Navigation) -->
+            <div class="flex flex-col justify-between py-4 gap-8">
+              <div>
+                <!-- Top Icons -->
+                <div class="flex justify-between items-start mb-8">
+                  <div class="flex gap-3">
+                    <div
+                      class="w-10 h-10 rounded-full bg-red-50 text-red-500 flex items-center justify-center soft-shadow"
+                    >
+                      <span class="material-symbols-outlined text-[20px]"
+                        >monitor_heart</span
+                      >
+                    </div>
+                    <div
+                      class="w-10 h-10 rounded-full bg-blue-50 text-blue-500 flex items-center justify-center soft-shadow"
+                    >
+                      <span class="material-symbols-outlined text-[20px]"
+                        >pill</span
+                      >
+                    </div>
+                    <div
+                      class="w-10 h-10 rounded-full bg-purple-50 text-purple-500 flex items-center justify-center soft-shadow"
+                    >
+                      <span class="material-symbols-outlined text-[20px]"
+                        >biotech</span
+                      >
+                    </div>
+                  </div>
+                  <!-- <div
+                    class="font-headline-md font-bold text-xl text-on-surface"
+                  >
+                    01<span class="text-sm text-on-surface-variant font-normal"
+                      >/05</span
+                    >
+                  </div> -->
+                </div>
+
+                <!-- Paragraph -->
+                <p class="text-[14px] text-on-surface-variant leading-relaxed">
+                  Our service goes beyond just providing medication. We offer
+                  holistic health solutions, including advice and support, to
+                  enhance your quality of life and overall wellness.
+                </p>
+              </div>
+
+              <!-- Bottom CTA -->
+              <div class="flex items-center justify-between">
+                <h3
+                  class="font-headline-lg text-3xl font-medium max-w-[180px] leading-tight text-on-surface"
+                >
+                  Health in Every <br />
+                  Dose
+                </h3>
+                <a
+                  href="products.html"
+                  class="w-14 h-14 rounded-full bg-white border border-glass-stroke soft-shadow flex items-center justify-center text-on-surface hover:bg-primary hover:text-white transition-colors cursor-pointer"
+                >
+                  <span class="material-symbols-outlined">chevron_right</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- About Us / Expertise -->
+      <section class="py-24" id="about">
+        <div
+          class="max-w-container-max mx-auto px-gutter grid grid-cols-1 lg:grid-cols-2 gap-20 items-center"
+        >
+          <div class="relative group">
+            <div class="grid grid-cols-2 gap-4">
+              <img
+                class="rounded-2xl soft-shadow mt-12"
+                data-alt="A scientist in a sterile laboratory setting using a microscope for research. The lighting is high-key and bright, highlighting the cleanliness and high-tech equipment of the facility. The scene conveys expertise and meticulous attention to detail in pharmaceutical manufacturing."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMyIaZH0ACz4dxiDhseBm2oRuxury6QL80k6tk2iLIdumXvWyx-QrprtBireCj3P6arW1akh9MGPxu2RkrM6XwtLn_lZeqEIM0sKhcWcKV9OPGYa6zmKGhFHcNO6XH7CdVYTA3SgES0zcnKImiIiOY5kedrsRTu5PIhaskWZEpHcSbxSX3JZ4RW372o2-nqYxf_woPyL8_l5J2QhlCJW_LxZypT1vofPMMrfINUh623h6YwL9UFmyUSFFqawNCplrOkuTYDDz9gL4"
+              />
+              <div class="space-y-4">
+                <img
+                  class="rounded-2xl soft-shadow"
+                  data-alt="Close up of a pharmacist's hand holding a single high-quality capsule over a white surface. The image represents integrity and focus on the final product, with soft shadows and a pristine, clinical aesthetic that builds trust."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAc-cASwT9hprgMsGLTUsHTaLoIV0ZhmYgpkwZjtE5JaFC6wlfjB4trxh-uVqqcCuW1EGyiTaAax5Bcda4B3lm38LTQ53GD5K-Rp23Tfvrnes6Nh01IQKRAXdHyvA9owfgplZG-n3KPD_tPTejcK7BCYMLysAP9REMb2pzL3qFzu4ERM8JsRcz3S_TRDYtE0mnUI4e_rO9UOxbh66GmKvlXgfU-0zBnQeDfzeZoRVFLIqQg6N--SJhQunp7N6FLK07t6ogVudAWNA"
+                />
+                <div class="bg-primary p-8 rounded-2xl text-white soft-shadow">
+                  <p class="text-headline-xl font-headline-xl mb-1">20+</p>
+                  <p class="text-label-md opacity-80 uppercase tracking-wider">
+                    Years Experience
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="space-y-6">
+            <h2 class="font-headline-lg text-headline-lg text-on-surface">
+              Your Wellness, Our
+              <span class="text-primary">Pharmacy Expertise</span>
+            </h2>
+            <p
+              class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed"
+            >
+              At Adlux, we believe in the harmony of nature and science. Our
+              legacy is built on two decades of unwavering commitment to
+              pharmaceutical excellence and ethical production standards.
+            </p>
+            <ul class="space-y-4">
+              <li
+                class="flex items-center gap-4 p-4 rounded-xl bg-white soft-shadow border border-glass-stroke"
+              >
+                <div
+                  class="w-10 h-10 rounded-full bg-mint-green flex items-center justify-center text-primary"
+                >
+                  <span class="material-symbols-outlined">local_shipping</span>
+                </div>
+                <span class="font-headline-md text-label-md"
+                  >Free Global Home Delivery</span
+                >
+              </li>
+              <li
+                class="flex items-center gap-4 p-4 rounded-xl bg-white soft-shadow border border-glass-stroke"
+              >
+                <div
+                  class="w-10 h-10 rounded-full bg-mint-green flex items-center justify-center text-primary"
+                >
+                  <span class="material-symbols-outlined">description</span>
+                </div>
+                <span class="font-headline-md text-label-md"
+                  >Online Prescription Verification</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- Products Section (Bento Grid Style) -->
+      <section class="py-24 bg-surface-container-lowest" id="products">
+        <div class="max-w-container-max mx-auto px-gutter">
+          <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="font-headline-lg text-headline-lg mb-4">
+              Precision Manufactured
+              <span class="text-primary">Medical Products</span>
+            </h2>
+            <p class="font-body-md text-on-surface-variant">
+              Our diverse portfolio covers essential therapeutic areas, ensuring
+              quality care is accessible to all.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Product Card 1 -->
+            <div
+              class="md:col-span-2 lg:col-span-2 bg-white rounded-2xl p-8 soft-shadow border border-glass-stroke flex flex-col justify-between action-hover min-h-[320px]"
+            >
+              <div>
+                <div class="flex justify-between items-start mb-6">
+                  <div
+                    class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary"
+                  >
+                    <span class="material-symbols-outlined text-4xl">pill</span>
+                  </div>
+                  <span
+                    class="bg-mint-green text-primary px-3 py-1 rounded-full text-[12px] font-bold"
+                    >TOP RATED</span
+                  >
+                </div>
+                <h3 class="font-headline-md text-headline-md mb-2">
+                  Tablets &amp; Capsules
+                </h3>
+                <p class="text-on-surface-variant text-body-md">
+                  Advanced formulation for maximum bioavailability and patient
+                  compliance.
+                </p>
+              </div>
+              <a
+                class="mt-6 flex items-center gap-2 text-primary font-bold text-label-md group"
+                href="#"
+              >
+                View Category
+                <span
+                  class="material-symbols-outlined group-hover:translate-x-1 transition-transform"
+                  >arrow_forward</span
+                >
+              </a>
+            </div>
+            <!-- Product Card 2 -->
+            <div
+              class="bg-white rounded-2xl p-8 soft-shadow border border-glass-stroke action-hover"
+            >
+              <div
+                class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center text-secondary mb-6"
+              >
+                <span class="material-symbols-outlined text-3xl">vaccines</span>
+              </div>
+              <h3 class="font-headline-md text-headline-md mb-2">
+                Injectables
+              </h3>
+              <p class="text-on-surface-variant text-sm">
+                Sterile manufacturing in ISO Class 5 environments.
+              </p>
+            </div>
+            <!-- Product Card 3 -->
+            <div
+              class="bg-white rounded-2xl p-8 soft-shadow border border-glass-stroke action-hover"
+            >
+              <div
+                class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center text-secondary mb-6"
+              >
+                <span class="material-symbols-outlined text-3xl"
+                  >medication</span
+                >
+              </div>
+              <h3 class="font-headline-md text-headline-md mb-2">
+                Liquid Syrups
+              </h3>
+              <p class="text-on-surface-variant text-sm">
+                Palatable formulations for pediatric and geriatric care.
+              </p>
+            </div>
+            <!-- Product Card 4 -->
+            <div
+              class="bg-white rounded-2xl p-8 soft-shadow border border-glass-stroke action-hover"
+            >
+              <div
+                class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center text-secondary mb-6"
+              >
+                <span class="material-symbols-outlined text-3xl">science</span>
+              </div>
+              <h3 class="font-headline-md text-headline-md mb-2">API Supply</h3>
+              <p class="text-on-surface-variant text-sm">
+                High-purity active pharmaceutical ingredients for global
+                partners.
+              </p>
+            </div>
+            <!-- Product Card 5 (Large Featured) -->
+            <div
+              class="md:col-span-3 lg:col-span-3 bg-primary-container text-white rounded-2xl p-8 flex flex-col md:flex-row gap-8 items-center action-hover"
+            >
+              <div class="flex-1 space-y-4">
+                <h3 class="font-headline-xl text-headline-md">
+                  Custom Formulation Services
+                </h3>
+                <p class="opacity-90">
+                  Partner with our R&amp;D team to develop specialized
+                  pharmaceutical solutions tailored to specific market needs.
+                </p>
+                <button
+                  class="bg-white text-primary px-6 py-3 rounded-xl font-bold text-label-md"
+                >
+                  Start Collaboration
+                </button>
+              </div>
+              <div class="flex-1 w-full">
+                <img
+                  class="rounded-xl w-full h-48 object-cover border border-white/20"
+                  data-alt="Detailed close up of laboratory vials containing colorful liquids, representing research and development. The background is slightly blurred with bright, professional lighting that emphasizes a high-tech clinical environment."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKvqT8B6vxrHRjeTGE-mlG-NPgsjCh-KsN96ZCLwL5peezpMP1V0zTnDJ3kEod53UNVVoqlm3Muz3y8G3EtHexovSJAWMKO8Cs0knoe25M0ELCfPae4u1AUV2m8iNb2qJmlSZgTRwc_5ng_wzD80_CJK7EzYU3Uy-tcQ7aR8L-0cWIKLTHOoohtW9Jq2D2bqjKNkihF5CByqedkvvnSASHxiHYnPvvGu6IuxQcvnS-QIApZ_APZ-75CzYzQwCj3Io5WglRS-NExQE"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="py-24 bg-surface-container-lowest overflow-hidden"
+        id="trusted"
+      >
+        <div class="max-w-container-max mx-auto px-gutter mb-16">
+          <div
+            class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8"
+          >
+            <h2
+              class="font-headline-xl text-4xl lg:text-6xl lg:max-w-xl text-on-surface leading-tight reveal-on-scroll"
+            >
+              Safe Hands, Healthier <br />
+              Lives, Trusted Pharmacy
+            </h2>
+            <div
+              class="lg:max-w-md reveal-on-scroll"
+              style="transition-delay: 200ms"
+            >
+              <p
+                class="font-body-md text-on-surface-variant mb-6 text-lg leading-relaxed"
+              >
+                Trust our skilled pharmacists to guide you towards a healthier
+                life. We ensure safety and efficacy in every prescription,
+                helping you make informed decisions about your health.
+              </p>
+              <a
+                href="products.html"
+                class="text-primary font-bold text-lg inline-flex items-center gap-2 group"
+              >
+                Explore More
+                <span
+                  class="material-symbols-outlined transition-transform group-hover:translate-x-1"
+                  >arrow_forward</span
+                >
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div
+            class="flex gap-6 overflow-x-auto px-gutter pb-12 hide-scrollbar snap-x snap-mandatory"
+          >
+            <!-- Card 1 -->
+            <div
+              class="flex-none w-[300px] md:w-[320px] bg-white rounded-[2.5rem] p-6 soft-shadow shrink-0 snap-start fly-in-left"
+              style="transition-delay: 100ms"
+            >
+              <div class="flex justify-between items-start mb-6">
+                <span
+                  class="text-on-surface-variant text-sm font-bold opacity-30"
+                  >01</span
+                >
+                <div class="text-right">
+                  <h4
+                    class="font-headline-md text-xl text-on-surface font-bold"
+                  >
+                    Sertraline
+                  </h4>
+                  <span class="text-sm text-on-surface-variant">50 mg</span>
+                </div>
+              </div>
+              <div class="rounded-[2rem] overflow-hidden h-56 bg-surface">
+                <img
+                  class="w-full h-full object-cover action-hover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMyIaZH0ACz4dxiDhseBm2oRuxury6QL80k6tk2iLIdumXvWyx-QrprtBireCj3P6arW1akh9MGPxu2RkrM6XwtLn_lZeqEIM0sKhcWcKV9OPGYa6zmKGhFHcNO6XH7CdVYTA3SgES0zcnKImiIiOY5kedrsRTu5PIhaskWZEpHcSbxSX3JZ4RW372o2-nqYxf_woPyL8_l5J2QhlCJW_LxZypT1vofPMMrfINUh623h6YwL9UFmyUSFFqawNCplrOkuTYDDz9gL4"
+                />
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div
+              class="flex-none w-[300px] md:w-[320px] bg-white rounded-[2.5rem] p-6 soft-shadow shrink-0 snap-start fly-in-left"
+              style="transition-delay: 200ms"
+            >
+              <div class="flex justify-between items-start mb-6">
+                <span
+                  class="text-on-surface-variant text-sm font-bold opacity-30"
+                  >01</span
+                >
+                <div class="text-right">
+                  <h4
+                    class="font-headline-md text-xl text-on-surface font-bold"
+                  >
+                    Lisinopril
+                  </h4>
+                  <span class="text-sm text-on-surface-variant">10 mg</span>
+                </div>
+              </div>
+              <div class="rounded-[2rem] overflow-hidden h-56 bg-surface">
+                <img
+                  class="w-full h-full object-cover action-hover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAc-cASwT9hprgMsGLTUsHTaLoIV0ZhmYgpkwZjtE5JaFC6wlfjB4trxh-uVqqcCuW1EGyiTaAax5Bcda4B3lm38LTQ53GD5K-Rp23Tfvrnes6Nh01IQKRAXdHyvA9owfgplZG-n3KPD_tPTejcK7BCYMLysAP9REMb2pzL3qFzu4ERM8JsRcz3S_TRDYtE0mnUI4e_rO9UOxbh66GmKvlXgfU-0zBnQeDfzeZoRVFLIqQg6N--SJhQunp7N6FLK07t6ogVudAWNA"
+                />
+              </div>
+            </div>
+            <!-- Card 3 -->
+            <div
+              class="flex-none w-[300px] md:w-[320px] bg-white rounded-[2.5rem] p-6 soft-shadow shrink-0 snap-start fly-in-left"
+              style="transition-delay: 300ms"
+            >
+              <div class="flex justify-between items-start mb-6">
+                <span
+                  class="text-on-surface-variant text-sm font-bold opacity-30"
+                  >01</span
+                >
+                <div class="text-right">
+                  <h4
+                    class="font-headline-md text-xl text-on-surface font-bold"
+                  >
+                    Omeprazole
+                  </h4>
+                  <span class="text-sm text-on-surface-variant">40 mg</span>
+                </div>
+              </div>
+              <div class="rounded-[2rem] overflow-hidden h-56 bg-surface">
+                <img
+                  class="w-full h-full object-cover action-hover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKvqT8B6vxrHRjeTGE-mlG-NPgsjCh-KsN96ZCLwL5peezpMP1V0zTnDJ3kEod53UNVVoqlm3Muz3y8G3EtHexovSJAWMKO8Cs0knoe25M0ELCfPae4u1AUV2m8iNb2qJmlSZgTRwc_5ng_wzD80_CJK7EzYU3Uy-tcQ7aR8L-0cWIKLTHOoohtW9Jq2D2bqjKNkihF5CByqedkvvnSASHxiHYnPvvGu6IuxQcvnS-QIApZ_APZ-75CzYzQwCj3Io5WglRS-NExQE"
+                />
+              </div>
+            </div>
+            <!-- Card 4 -->
+            <div
+              class="flex-none w-[300px] md:w-[320px] bg-white rounded-[2.5rem] p-6 soft-shadow shrink-0 snap-start fly-in-left"
+              style="transition-delay: 400ms"
+            >
+              <div class="flex justify-between items-start mb-6">
+                <span
+                  class="text-on-surface-variant text-sm font-bold opacity-30"
+                  >01</span
+                >
+                <div class="text-right">
+                  <h4
+                    class="font-headline-md text-xl text-on-surface font-bold"
+                  >
+                    Metformin
+                  </h4>
+                  <span class="text-sm text-on-surface-variant">850 mg</span>
+                </div>
+              </div>
+              <div class="rounded-[2rem] overflow-hidden h-56 bg-surface">
+                <img
+                  class="w-full h-full object-cover action-hover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4mi_imjpBswdZjBGKLsIygPKKqc-tVuGUDIJD-WM4_Pr3jAhZQX38VrPm-07JYic5R-1GaclfAR27ZUyZK_PWAzotH0HI2T8A80B5k9gyRtOJXpUNirV2NAb3mXmVMTXWmR1zqsToMggZ3Tc6Ru0izIT8dCX4juoX2B1jtmUKvSpBywyJKODsUAGouripv9903YT-80_xJGFgqfhAQzN9nfB4qwWIk9zYSwJ0HeG5Y-XW9C2jxs-wAgM-O8n7LzeIpnLiy0blOl8"
+                />
+              </div>
+            </div>
+            <!-- Card 5 -->
+            <div
+              class="flex-none w-[300px] md:w-[320px] bg-white rounded-[2.5rem] p-6 soft-shadow shrink-0 snap-start fly-in-left"
+              style="transition-delay: 500ms"
+            >
+              <div class="flex justify-between items-start mb-6">
+                <span
+                  class="text-on-surface-variant text-sm font-bold opacity-30"
+                  >01</span
+                >
+                <div class="text-right">
+                  <h4
+                    class="font-headline-md text-xl text-on-surface font-bold"
+                  >
+                    Atorvastatin
+                  </h4>
+                  <span class="text-sm text-on-surface-variant">20 mg</span>
+                </div>
+              </div>
+              <div class="rounded-[2rem] overflow-hidden h-56 bg-surface">
+                <img
+                  class="w-full h-full object-cover action-hover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAc-cASwT9hprgMsGLTUsHTaLoIV0ZhmYgpkwZjtE5JaFC6wlfjB4trxh-uVqqcCuW1EGyiTaAax5Bcda4B3lm38LTQ53GD5K-Rp23Tfvrnes6Nh01IQKRAXdHyvA9owfgplZG-n3KPD_tPTejcK7BCYMLysAP9REMb2pzL3qFzu4ERM8JsRcz3S_TRDYtE0mnUI4e_rO9UOxbh66GmKvlXgfU-0zBnQeDfzeZoRVFLIqQg6N--SJhQunp7N6FLK07t6ogVudAWNA"
+                />
+              </div>
+            </div>
+            <!-- Explore More Card -->
+            <a
+              href="products.html"
+              class="flex-none w-[150px] bg-mint-green/30 rounded-[2.5rem] p-6 soft-shadow shrink-0 snap-start fly-in-left flex flex-col items-center justify-center gap-4 hover:bg-mint-green/50 transition-colors group"
+              style="transition-delay: 600ms"
+            >
+              <div
+                class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center"
+              >
+                <span
+                  class="material-symbols-outlined group-hover:translate-x-1 transition-transform"
+                  >arrow_forward</span
+                >
+              </div>
+              <span class="font-bold text-primary text-center"
+                >Explore<br />More</span
+              >
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- Quality Control -->
+      <section class="py-24 bg-surface relative overflow-hidden" id="quality">
+        <div class="max-w-container-max mx-auto px-gutter relative z-10">
+          <div class="flex flex-col lg:flex-row gap-16 items-center">
+            <div class="lg:w-1/2 space-y-8">
+              <div
+                class="inline-block px-4 py-1 bg-white rounded-full text-primary font-bold text-[12px] shadow-sm border border-glass-stroke"
+              >
+                OUR PROMISE
+              </div>
+              <h2 class="font-headline-xl text-headline-xl">
+                Integrity in Every Prescription
+              </h2>
+              <p class="font-body-lg text-body-lg text-on-surface-variant">
+                Our Quality Control unit operates independently of production,
+                ensuring that every tablet meets the highest international USP
+                and BP standards. Precision is not just a goal; it's our
+                standard operating procedure.
+              </p>
+              <div class="grid grid-cols-2 gap-8">
+                <div>
+                  <h4
+                    class="font-headline-md text-headline-md text-primary mb-2"
+                  >
+                    WHO-GMP
+                  </h4>
+                  <p class="text-sm text-on-surface-variant">
+                    Certified manufacturing facilities and processes.
+                  </p>
+                </div>
+                <div>
+                  <h4
+                    class="font-headline-md text-headline-md text-primary mb-2"
+                  >
+                    99.9%
+                  </h4>
+                  <p class="text-sm text-on-surface-variant">
+                    Molecular purity achieved in secondary testing.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="lg:w-1/2">
+              <div class="relative">
+                <div
+                  class="absolute inset-0 bg-primary/5 rounded-[2.5rem] rotate-3 scale-105"
+                ></div>
+                <img
+                  class="relative rounded-[2rem] soft-shadow w-full"
+                  data-alt="A scientist wearing a full protective cleanroom suit and gloves, carefully handling medical samples in a highly controlled pharmaceutical environment. The lighting is sterile and blue-toned, with multiple light sources creating a professional, hi-tech atmosphere."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4mi_imjpBswdZjBGKLsIygPKKqc-tVuGUDIJD-WM4_Pr3jAhZQX38VrPm-07JYic5R-1GaclfAR27ZUyZK_PWAzotH0HI2T8A80B5k9gyRtOJXpUNirV2NAb3mXmVMTXWmR1zqsToMggZ3Tc6Ru0izIT8dCX4juoX2B1jtmUKvSpBywyJKODsUAGouripv9903YT-80_xJGFgqfhAQzN9nfB4qwWIk9zYSwJ0HeG5Y-XW9C2jxs-wAgM-O8n7LzeIpnLiy0blOl8"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Founders Section -->
+      <section
+        class="py-20 md:py-24 bg-white relative overflow-hidden"
+        id="founders"
+      >
+        <div class="max-w-container-max mx-auto px-gutter">
+          <!-- Header -->
+          <div class="mb-12 md:mb-16 founder-left">
+            <h2
+              class="font-headline-xl text-3xl md:text-4xl lg:text-[3.5rem] font-light text-on-surface leading-tight mb-4"
+            >
+              The Team Behind Your<br />
+              <span class="text-primary italic">Pharmaceutical</span> Success
+            </h2>
+            <p
+              class="text-on-surface/60 text-base md:text-lg leading-relaxed max-w-lg mb-6"
+            >
+              Meet the visionary partners driving Adlux Pharmaceuticals LLP —
+              committed to precision, innovation, and global healthcare
+              excellence.
+            </p>
+            <a
+              href="#contact"
+              class="inline-flex items-center gap-3 bg-on-surface text-white px-7 py-3.5 rounded-full font-semibold text-sm hover:bg-primary transition-colors"
+            >
+              <span class="material-symbols-outlined text-lg">call</span>
+              Get in Touch
+            </a>
+          </div>
+
+          <!-- Founders Grid -->
+          <div
+            class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-10"
+          >
+            <!-- Person 1 -->
+            <div class="founder-card text-center">
+              <div
+                class="w-[110px] h-[110px] sm:w-[130px] sm:h-[130px] lg:w-[150px] lg:h-[150px] rounded-full overflow-hidden border-4 border-white shadow-xl mx-auto mb-3"
+              >
+                <img
+                  src="founder.png"
+                  alt="Mohammed Abdulbaise Villan"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <h4
+                class="font-headline-lg font-bold text-xs sm:text-sm text-on-surface leading-tight"
+              >
+                Mohammed<br />Abdulbaise
+              </h4>
+              <p class="text-[10px] sm:text-[11px] text-on-surface/50 mt-1">
+                Managing Partner
+              </p>
+            </div>
+
+            <!-- Person 2 -->
+            <div class="founder-card text-center">
+              <div
+                class="w-[110px] h-[110px] sm:w-[130px] sm:h-[130px] lg:w-[150px] lg:h-[150px] rounded-full overflow-hidden border-4 border-white shadow-xl mx-auto mb-3"
+              >
+                <img
+                  src="founder.png"
+                  alt="Sharafudeen Kizhakkethil"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <h4
+                class="font-headline-lg font-bold text-xs sm:text-sm text-on-surface leading-tight"
+              >
+                Sharafudeen<br />Kizhakkethil
+              </h4>
+              <p class="text-[10px] sm:text-[11px] text-on-surface/50 mt-1">
+                Managing Partner
+              </p>
+            </div>
+
+            <!-- Person 3 -->
+            <div class="founder-card text-center">
+              <div
+                class="w-[110px] h-[110px] sm:w-[130px] sm:h-[130px] lg:w-[150px] lg:h-[150px] rounded-full overflow-hidden border-4 border-white shadow-xl mx-auto mb-3"
+              >
+                <img
+                  src="founder.png"
+                  alt="Afeef K Gafoor"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <h4
+                class="font-headline-lg font-bold text-xs sm:text-sm text-on-surface leading-tight"
+              >
+                Afeef<br />K Gafoor
+              </h4>
+              <p class="text-[10px] sm:text-[11px] text-on-surface/50 mt-1">
+                Managing Partner
+              </p>
+            </div>
+
+            <!-- Person 4 -->
+            <div class="founder-card text-center">
+              <div
+                class="w-[110px] h-[110px] sm:w-[130px] sm:h-[130px] lg:w-[150px] lg:h-[150px] rounded-full overflow-hidden border-4 border-white shadow-xl mx-auto mb-3"
+              >
+                <img
+                  src="founder.png"
+                  alt="Pranav Swaminathan"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <h4
+                class="font-headline-lg font-bold text-xs sm:text-sm text-on-surface leading-tight"
+              >
+                Pranav<br />Swaminathan
+              </h4>
+              <p class="text-[10px] sm:text-[11px] text-on-surface/50 mt-1">
+                Designated Partner
+              </p>
+            </div>
+
+            <!-- Person 5 -->
+            <div class="founder-card text-center">
+              <div
+                class="w-[110px] h-[110px] sm:w-[130px] sm:h-[130px] lg:w-[150px] lg:h-[150px] rounded-full overflow-hidden border-4 border-white shadow-xl mx-auto mb-3"
+              >
+                <img
+                  src="founder.png"
+                  alt="Rakesh Krishnan Pushparaj"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <h4
+                class="font-headline-lg font-bold text-xs sm:text-sm text-on-surface leading-tight"
+              >
+                Rakesh Krishnan<br />Pushparaj
+              </h4>
+              <p class="text-[10px] sm:text-[11px] text-on-surface/50 mt-1">
+                Designated Partner
+              </p>
+            </div>
+
+            <!-- Person 6 -->
+            <div class="founder-card text-center">
+              <div
+                class="w-[110px] h-[110px] sm:w-[130px] sm:h-[130px] lg:w-[150px] lg:h-[150px] rounded-full overflow-hidden border-4 border-white shadow-xl mx-auto mb-3"
+              >
+                <img
+                  src="founder.png"
+                  alt="Pazhanimala Sreevalsakumar"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <h4
+                class="font-headline-lg font-bold text-xs sm:text-sm text-on-surface leading-tight"
+              >
+                Pazhanimala<br />Sreevalsakumar
+              </h4>
+              <p class="text-[10px] sm:text-[11px] text-on-surface/50 mt-1">
+                Designated Partner
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Decorative blurred circles -->
+        <div
+          class="absolute -bottom-20 -left-20 w-72 h-72 bg-primary/5 rounded-full blur-[80px]"
+        ></div>
+        <div
+          class="absolute -top-16 -right-16 w-64 h-64 bg-mint-green/20 rounded-full blur-[60px]"
+        ></div>
+      </section>
+      <!-- Newsletter / Contact -->
+      <section class="py-24" id="contact">
+        <div class="max-w-container-max mx-auto px-gutter">
+          <div
+            class="bg-inverse-surface rounded-[2.5rem] p-12 md:p-20 relative overflow-hidden text-white text-center"
+          >
+            <div class="relative z-10 space-y-8 max-w-2xl mx-auto">
+              <h2 class="font-headline-xl text-headline-xl">
+                Join the Future of <br />
+                Healthcare Innovation
+              </h2>
+              <p class="opacity-70 text-body-lg">
+                Subscribe to receive the latest updates on medical breakthroughs
+                and Adlux pharmaceutical advancements.
+              </p>
+              <form class="flex flex-col md:flex-row gap-4 max-w-md mx-auto">
+                <input
+                  class="flex-1 rounded-xl bg-white/10 border-white/20 text-white placeholder-white/40 px-6 py-4 focus:ring-primary focus:border-primary transition-all"
+                  placeholder="Your work email"
+                  type="email"
+                />
+                <button
+                  class="bg-primary text-white font-bold px-8 py-4 rounded-xl action-hover shadow-xl"
+                >
+                  Subscribe Now
+                </button>
+              </form>
+            </div>
+            <!-- Abstract Background Elements -->
+            <div
+              class="absolute top-0 left-0 w-64 h-64 bg-primary/20 rounded-full blur-[100px]"
+            ></div>
+            <div
+              class="absolute bottom-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px]"
+            ></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer
+      class="bg-surface-container-lowest dark:bg-inverse-surface border-t border-glass-stroke py-12"
+    >
+      <div class="max-w-container-max mx-auto px-gutter">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-base mb-12">
+          <div class="col-span-1 md:col-span-1">
+            <img src="Adlux_logo.png" alt="Adlux" class="h-10 w-auto mb-6" />
+            <p
+              class="font-body-md text-on-surface-variant dark:text-surface-variant max-w-xs leading-relaxed"
+            >
+              Precision in every pill. Dedicated to elevating global health
+              standards through clinical excellence.
+            </p>
+            <div class="flex gap-4 mt-6">
+              <a
+                class="text-on-surface-variant hover:text-primary transition-colors"
+                href="#"
+                ><span class="material-symbols-outlined">public</span></a
+              >
+              <a
+                class="text-on-surface-variant hover:text-primary transition-colors"
+                href="#"
+                ><span class="material-symbols-outlined">groups</span></a
+              >
+              <a
+                class="text-on-surface-variant hover:text-primary transition-colors"
+                href="#"
+                ><span class="material-symbols-outlined">hub</span></a
+              >
+            </div>
+          </div>
+          <div class="flex flex-col gap-4">
+            <h4 class="font-label-md text-primary font-bold">Support</h4>
+            <a
+              class="text-on-surface-variant dark:text-surface-variant hover:text-primary underline-offset-4 hover:underline"
+              href="#"
+              >Documentation</a
+            >
+            <a
+              class="text-on-surface-variant dark:text-surface-variant hover:text-primary underline-offset-4 hover:underline"
+              href="#"
+              >Contact Support</a
+            >
+            <a
+              class="text-on-surface-variant dark:text-surface-variant hover:text-primary underline-offset-4 hover:underline"
+              href="#"
+              >Pharma Ethics</a
+            >
+          </div>
+          <div class="flex flex-col gap-4">
+            <h4 class="font-label-md text-primary font-bold">Company</h4>
+            <a
+              class="text-on-surface-variant dark:text-surface-variant hover:text-primary underline-offset-4 hover:underline"
+              href="#"
+              >About Us</a
+            >
+            <a
+              class="text-on-surface-variant dark:text-surface-variant hover:text-primary underline-offset-4 hover:underline"
+              href="#"
+              >Our Quality</a
+            >
+            <a
+              class="text-on-surface-variant dark:text-surface-variant hover:text-primary underline-offset-4 hover:underline"
+              href="#"
+              >Careers</a
+            >
+          </div>
+          <div class="flex flex-col gap-4">
+            <h4 class="font-label-md text-primary font-bold">Legal</h4>
+            <a
+              class="text-on-surface-variant dark:text-surface-variant hover:text-primary underline-offset-4 hover:underline"
+              href="#"
+              >Privacy Policy</a
+            >
+            <a
+              class="text-on-surface-variant dark:text-surface-variant hover:text-primary underline-offset-4 hover:underline"
+              href="#"
+              >Terms of Service</a
+            >
+            <a
+              class="text-on-surface-variant dark:text-surface-variant hover:text-primary underline-offset-4 hover:underline"
+              href="#"
+              >Global Supply</a
+            >
+          </div>
+        </div>
+        <div class="pt-8 border-t border-glass-stroke text-center">
+          <p
+            class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant"
+          >
+            © 2024 Adlux Pharmaceuticals. All rights reserved. Precision in
+            every pill.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Hamburger menu toggle
+      const hamburgerBtn = document.getElementById("hamburger-btn");
+      const mobileNav = document.getElementById("mobile-nav");
+
+      function closeMobileNav() {
+        hamburgerBtn.classList.remove("active");
+        mobileNav.classList.remove("open");
+      }
+
+      if (hamburgerBtn && mobileNav) {
+        hamburgerBtn.addEventListener("click", () => {
+          hamburgerBtn.classList.toggle("active");
+          mobileNav.classList.toggle("open");
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-link");
+        const headerOffset = 100;
+
+        const observerOptions = {
+          root: null,
+          rootMargin: `-${headerOffset}px 0px -50% 0px`,
+          threshold: 0,
+        };
+
+        const setActiveLink = (id) => {
+          navLinks.forEach((link) => {
+            const isActive = link.getAttribute("href") === `#${id}`;
+            if (isActive) {
+              link.classList.remove(
+                "text-on-surface-variant",
+                "dark:text-surface-variant",
+                "border-transparent",
+              );
+              link.classList.add(
+                "text-primary",
+                "dark:text-primary-fixed",
+                "border-primary",
+                "dark:border-primary-fixed",
+              );
+            } else {
+              link.classList.remove(
+                "text-primary",
+                "dark:text-primary-fixed",
+                "border-primary",
+                "dark:border-primary-fixed",
+              );
+              link.classList.add(
+                "text-on-surface-variant",
+                "dark:text-surface-variant",
+                "border-transparent",
+              );
+            }
+          });
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setActiveLink(entry.target.id);
+            }
+          });
+        }, observerOptions);
+
+        sections.forEach((section) => {
+          if (section.id) observer.observe(section);
+        });
+
+        // Reveal animation observer
+        const revealObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+              }
+            });
+          },
+          { threshold: 0.1 },
+        );
+
+        document
+          .querySelectorAll(".reveal-on-scroll, .fly-in-left")
+          .forEach((el) => revealObserver.observe(el));
+
+        // Click handler for smooth scrolling
+        navLinks.forEach((link) => {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute("href");
+            if (targetId === "#") return;
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+              window.scrollTo({
+                top: targetSection.offsetTop - headerOffset + 20,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+
+        // Hero Avatar & Dot Carousel Animation
+        const avatars = document.querySelectorAll(".hero-avatar");
+        const dots = document.querySelectorAll(".hero-dot");
+        let currentIdx = 0;
+
+        const cycleHero = () => {
+          // Reset dots
+          dots.forEach((dot) => {
+            dot.classList.remove("bg-on-surface");
+            dot.classList.add("bg-surface-variant");
+          });
+
+          // Highlight current dot
+          const dotIdx = currentIdx % dots.length;
+          dots[dotIdx].classList.remove("bg-surface-variant");
+          dots[dotIdx].classList.add("bg-on-surface");
+
+          // Animate current avatar
+          gsap.fromTo(
+            avatars[currentIdx % avatars.length],
+            { scale: 1, filter: "brightness(1)" },
+            {
+              scale: 1.2,
+              filter: "brightness(1.2)",
+              duration: 0.8,
+              yoyo: true,
+              repeat: 1,
+              ease: "power1.inOut",
+            },
+          );
+
+          currentIdx++;
+          setTimeout(cycleHero, 2000);
+        };
+
+        if (avatars.length > 0) cycleHero();
+
+        // Founders Section GSAP Animation
+        const foundersSection = document.getElementById("founders");
+        if (foundersSection) {
+          const founderCards =
+            foundersSection.querySelectorAll(".founder-card");
+          const founderLeft = foundersSection.querySelector(".founder-left");
+
+          // Set initial states
+          gsap.set(founderLeft, { opacity: 0, x: -120 });
+          gsap.set(founderCards, { opacity: 0, scale: 0.6 });
+
+          // Directions for each card: they fly in from outside
+          const directions = [
+            { x: -200, y: -100 }, // top-left: from far left
+            { x: 0, y: -200 }, // top-center: from above
+            { x: 200, y: -100 }, // top-right: from far right
+            { x: -200, y: 100 }, // middle-left: from far left below
+            { x: 0, y: 200 }, // middle-center: from below
+            { x: 200, y: 100 }, // bottom-right: from far right below
+          ];
+
+          const founderObserver = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  // Animate left text in
+                  gsap.to(founderLeft, {
+                    opacity: 1,
+                    x: 0,
+                    duration: 1,
+                    ease: "power3.out",
+                  });
+
+                  // Animate each card flying in from its direction
+                  founderCards.forEach((card, i) => {
+                    const dir = directions[i] || { x: 0, y: 200 };
+                    gsap.fromTo(
+                      card,
+                      { opacity: 0, x: dir.x, y: dir.y, scale: 0.6 },
+                      {
+                        opacity: 1,
+                        x: 0,
+                        y: 0,
+                        scale: 1,
+                        duration: 1.2,
+                        delay: 0.15 * i + 0.3,
+                        ease: "back.out(1.4)",
+                      },
+                    );
+                  });
+
+                  founderObserver.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.15 },
+          );
+
+          founderObserver.observe(foundersSection);
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,446 @@
+<!doctype html>
+<html class="scroll-smooth" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Products | Adlux Pharmaceuticals</title>
+    <link rel="icon" href="Adlux_logo.png" type="image/png" />
+    <link rel="apple-touch-icon" href="Adlux_logo.png" />
+    <meta property="og:image" content="Adlux_logo.png" />
+    <meta name="twitter:image" content="Adlux_logo.png" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              surface: "#f7f9fb",
+              "on-surface": "#191c1e",
+              primary: "#006b2e",
+              "primary-container": "#00873c",
+              "mint-green": "#D1FAE5",
+              "glass-stroke": "rgba(255, 255, 255, 0.4)",
+              background: "#f7f9fb",
+              outline: "#6e7a6d",
+              "surface-variant": "#e0e3e5",
+            },
+            borderRadius: {
+              "2xl": "1.5rem",
+              full: "9999px",
+            },
+            spacing: {
+              gutter: "24px",
+              "container-max": "1280px",
+            },
+            fontFamily: {
+              "headline-lg": ["Montserrat"],
+              "body-md": ["Inter"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .glassmorphism {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+      }
+      .soft-shadow {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      }
+
+      /* Product card */
+      .product-card {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+      }
+      .product-card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(0, 107, 46, 0.03), transparent);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        border-radius: inherit;
+        z-index: 0;
+      }
+      .product-card:hover::before { opacity: 1; }
+      .product-card:hover {
+        transform: translateY(-6px) scale(1.01);
+        box-shadow: 0 24px 48px rgba(0, 107, 46, 0.08), 0 8px 16px rgba(0, 0, 0, 0.04);
+        border-color: rgba(0, 107, 46, 0.15);
+      }
+      .product-card:hover .card-icon-wrap {
+        background-color: #006b2e;
+      }
+      .product-card:hover .card-icon-wrap .material-symbols-outlined {
+        color: white;
+      }
+      .product-card:hover .card-arrow {
+        transform: translateX(4px);
+        opacity: 1;
+      }
+
+      /* Category pills */
+      .category-pill {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+      .category-pill::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: #006b2e;
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+      }
+      .category-pill:hover::after { width: 60%; }
+      .category-pill.active {
+        background-color: #006b2e !important;
+        color: white !important;
+        box-shadow: 0 8px 20px rgba(0, 107, 46, 0.25);
+        transform: translateY(-1px);
+      }
+      .category-pill:active { transform: scale(0.96); }
+
+      /* Search input */
+      .search-wrap:focus-within {
+        box-shadow: 0 0 0 3px rgba(0, 107, 46, 0.1);
+        border-color: rgba(0, 107, 46, 0.3);
+      }
+      .search-wrap:focus-within .search-icon { color: #006b2e; }
+
+      /* Counter badge */
+      .count-badge {
+        min-width: 22px;
+        height: 22px;
+        font-size: 11px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Scrollbar hide */
+      .hide-scrollbar::-webkit-scrollbar { display: none; }
+      .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+      /* Mobile Nav */
+      .mobile-nav-overlay {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .mobile-nav-overlay.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      .hamburger-line {
+        width: 22px;
+        height: 2px;
+        background: #191c1e;
+        transition: all 0.3s ease;
+        border-radius: 2px;
+      }
+      .hamburger.active .hamburger-line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      .hamburger.active .hamburger-line:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger.active .hamburger-line:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+    </style>
+  </head>
+
+  <body class="bg-background text-on-surface font-body-md antialiased overflow-x-hidden">
+    <!-- Header -->
+    <div class="fixed top-0 md:top-6 left-0 right-0 z-50 px-0 md:px-8 w-full pointer-events-none">
+      <header class="w-full md:max-w-container-max mx-auto glassmorphism rounded-none md:rounded-full h-16 md:h-20 flex items-center justify-between px-6 md:px-8 shadow-sm pointer-events-auto">
+        <a class="flex items-center z-10" href="desktop_code.html">
+          <img src="Adlux_logo.png" alt="Adlux" class="h-8 md:h-10 w-auto" />
+        </a>
+        <nav class="hidden md:flex items-center gap-8">
+          <a class="nav-link font-medium text-sm text-on-surface hover:text-primary transition-colors" href="desktop_code.html">Home</a>
+          <a class="nav-link font-medium text-sm text-primary border-b-2 border-primary pb-1" href="products.html">Products</a>
+          <a class="nav-link font-medium text-sm text-on-surface hover:text-primary transition-colors" href="desktop_code.html#about">About Us</a>
+          <a class="nav-link font-medium text-sm text-on-surface hover:text-primary transition-colors" href="desktop_code.html#contact">Contact</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <button class="hidden md:block bg-primary text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-primary-container transition-all">Enquire Now</button>
+          <button class="hamburger md:hidden flex flex-col gap-[5px] items-center justify-center w-10 h-10 rounded-full hover:bg-surface-variant/30 transition-colors z-10" id="hamburger-btn" aria-label="Menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+      </header>
+      <!-- Mobile Nav Overlay -->
+      <div class="mobile-nav-overlay md:hidden w-full mx-auto glassmorphism rounded-none rounded-b-3xl p-6 shadow-lg pointer-events-auto" id="mobile-nav">
+        <nav class="flex flex-col gap-3">
+          <a class="font-medium text-base text-on-surface hover:text-primary transition-colors py-2.5 border-b border-surface-variant/30" href="desktop_code.html">Home</a>
+          <a class="font-medium text-base text-primary py-2.5 border-b border-surface-variant/30" href="products.html">Products</a>
+          <a class="font-medium text-base text-on-surface hover:text-primary transition-colors py-2.5 border-b border-surface-variant/30" href="desktop_code.html#about">About Us</a>
+          <a class="font-medium text-base text-on-surface hover:text-primary transition-colors py-2.5" href="desktop_code.html#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+
+    <main class="pt-32 md:pt-40 pb-24 px-4 md:px-8">
+      <div class="max-w-container-max mx-auto">
+
+        <!-- Hero Title Section -->
+        <div class="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6" id="hero-text">
+          <div>
+            <div class="inline-flex items-center gap-2 bg-primary/5 border border-primary/10 text-primary rounded-full px-4 py-1.5 text-xs font-bold tracking-wider uppercase mb-5">
+              <span class="material-symbols-outlined text-sm">inventory_2</span>
+              Product Catalogue
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-headline-lg font-light text-on-surface leading-tight">
+              Our Pharmaceutical<br/>
+              <span class="text-primary italic font-medium">Portfolio</span>
+            </h1>
+          </div>
+          <p class="text-on-surface/50 max-w-md text-base md:text-lg leading-relaxed md:pb-2">
+            High-quality pharmaceutical products across multiple therapeutic categories, engineered for precision and reliability.
+          </p>
+        </div>
+
+        <!-- Sticky Filter Bar -->
+        <div class="sticky top-24 md:top-28 z-40 mb-10" id="filter-bar">
+          <div class="bg-white/90 backdrop-blur-xl rounded-2xl md:rounded-full p-3 md:p-3 shadow-lg shadow-black/[0.03] border border-surface-variant/50">
+            <div class="flex flex-col md:flex-row items-center gap-3">
+              <!-- Search -->
+              <div class="search-wrap relative w-full md:w-72 lg:w-80 border border-surface-variant/60 rounded-full transition-all bg-white">
+                <span class="search-icon material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface/30 text-[20px] transition-colors">search</span>
+                <input 
+                  type="text" 
+                  id="search-input"
+                  placeholder="Search products..."
+                  class="w-full pl-10 pr-4 py-3 rounded-full border-none bg-transparent focus:ring-0 text-sm outline-none placeholder:text-on-surface/30"
+                />
+              </div>
+              
+              <!-- Divider -->
+              <div class="hidden md:block w-px h-7 bg-surface-variant/60"></div>
+
+              <!-- Category Pills (horizontal scroll on mobile) -->
+              <div class="flex items-center gap-2 overflow-x-auto hide-scrollbar w-full md:w-auto -mx-3 px-3 md:mx-0 md:px-0 pb-1 md:pb-0" id="category-filters">
+                <button class="category-pill active px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-surface-variant/20 hover:bg-surface-variant/40 transition-all" data-category="ALL">All <span class="count-badge bg-white/40 rounded-full ml-1.5 px-2 py-0.5" id="count-all">16</span></button>
+                <button class="category-pill px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-surface-variant/20 hover:bg-surface-variant/40 transition-all" data-category="Tablets">Tablets <span class="count-badge bg-primary/10 text-primary rounded-full ml-1.5 px-2 py-0.5">7</span></button>
+                <button class="category-pill px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-surface-variant/20 hover:bg-surface-variant/40 transition-all" data-category="Syrups">Syrups <span class="count-badge bg-primary/10 text-primary rounded-full ml-1.5 px-2 py-0.5">3</span></button>
+                <button class="category-pill px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-surface-variant/20 hover:bg-surface-variant/40 transition-all" data-category="Injections">Injections <span class="count-badge bg-primary/10 text-primary rounded-full ml-1.5 px-2 py-0.5">3</span></button>
+                <button class="category-pill px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-surface-variant/20 hover:bg-surface-variant/40 transition-all" data-category="Topical">Topical <span class="count-badge bg-primary/10 text-primary rounded-full ml-1.5 px-2 py-0.5">1</span></button>
+                <button class="category-pill px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-surface-variant/20 hover:bg-surface-variant/40 transition-all" data-category="Drops">Drops <span class="count-badge bg-primary/10 text-primary rounded-full ml-1.5 px-2 py-0.5">1</span></button>
+                <button class="category-pill px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-surface-variant/20 hover:bg-surface-variant/40 transition-all" data-category="Infusions">Infusions <span class="count-badge bg-primary/10 text-primary rounded-full ml-1.5 px-2 py-0.5">1</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Results count -->
+        <div class="flex items-center justify-between mb-6 px-1" id="results-bar">
+          <p class="text-sm text-on-surface/40"><span id="result-count" class="font-semibold text-on-surface">16</span> products found</p>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-5" id="product-grid">
+          <!-- Cards injected by JS -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="empty-state" class="hidden py-24 text-center">
+          <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-surface-variant/30 flex items-center justify-center">
+            <span class="material-symbols-outlined text-4xl text-on-surface/20">search_off</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">No products found</h3>
+          <p class="text-on-surface/40 mb-6">Try adjusting your search or filters</p>
+          <button onclick="resetFilters()" class="text-sm font-semibold text-primary hover:underline">Clear all filters</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer strip -->
+    <footer class="border-t border-surface-variant/40 py-6">
+      <div class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row items-center justify-between gap-4">
+        <a href="desktop_code.html" class="flex items-center gap-2 text-on-surface/40 hover:text-primary transition-colors text-sm">
+          <span class="material-symbols-outlined text-lg">arrow_back</span>
+          Back to Home
+        </a>
+        <p class="text-xs text-on-surface/30">© 2024 Adlux Pharmaceuticals LLP. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Hamburger menu toggle
+      const hamburgerBtn = document.getElementById('hamburger-btn');
+      const mobileNav = document.getElementById('mobile-nav');
+
+      if (hamburgerBtn && mobileNav) {
+        hamburgerBtn.addEventListener('click', () => {
+          hamburgerBtn.classList.toggle('active');
+          mobileNav.classList.toggle('open');
+        });
+      }
+
+      // Category color map for visual distinction
+      const categoryColors = {
+        'Tablets': { bg: 'bg-emerald-50', text: 'text-emerald-700', border: 'border-emerald-100', iconBg: 'bg-emerald-100' },
+        'Syrups': { bg: 'bg-amber-50', text: 'text-amber-700', border: 'border-amber-100', iconBg: 'bg-amber-100' },
+        'Injections': { bg: 'bg-blue-50', text: 'text-blue-700', border: 'border-blue-100', iconBg: 'bg-blue-100' },
+        'Topical': { bg: 'bg-purple-50', text: 'text-purple-700', border: 'border-purple-100', iconBg: 'bg-purple-100' },
+        'Drops': { bg: 'bg-cyan-50', text: 'text-cyan-700', border: 'border-cyan-100', iconBg: 'bg-cyan-100' },
+        'Infusions': { bg: 'bg-rose-50', text: 'text-rose-700', border: 'border-rose-100', iconBg: 'bg-rose-100' },
+      };
+
+      const products = [
+        { id: 1, name: "SYSCAL TAB", category: "Tablets", composition: "Calcium Citrate Malate IP - 500mg and Vitamin D3 - 250mg Tablets", icon: "pill" },
+        { id: 2, name: "ZOLOFEN-SP", category: "Tablets", composition: "Aceclofenac 100mg, Paracetamol 325mg, Serratiopeptidase 15mg Tablet", icon: "pill" },
+        { id: 3, name: "DEFLATOP", category: "Tablets", composition: "Deflazacort - 6mg Tablets", icon: "pill" },
+        { id: 4, name: "OVITAL", category: "Tablets", composition: "Multi Vitamins Antioxidants Minerals and Vital Nutrients Tablets", icon: "pill" },
+        { id: 5, name: "FIXOM-200", category: "Tablets", composition: "Cefixime - 200 Mg Tablets", icon: "pill" },
+        { id: 6, name: "FINEBRO N", category: "Tablets", composition: "Acebrophylline 100 Mg and Acetylcysteine 600 Mg Tablet", icon: "pill" },
+        { id: 7, name: "OVITAL-LC", category: "Tablets", composition: "L Evo Carnitine + L Tartrate 500mg, Mecobalamin 1500mcg, Folic Acid 1.5mg", icon: "pill" },
+        { id: 8, name: "D-RUB GEL", category: "Topical", composition: "Linseed Oil Bp 3% + diclofenac Diethylmine Salt Eq. To Diclofenac Sodium Ip 1%w/w + Methyl Salicylate IP 10% + menthol Ip 5% + benzyl Alcohol Ip 1%w/w...", icon: "medication" },
+        { id: 9, name: "ADCLAV-DS SYRUP", category: "Syrups", composition: "Amoxicillin 400 Mg + Clavulanic Acid 57 Mg Ds BP With Sterile Water", icon: "fluid_med" },
+        { id: 10, name: "LEVOLUX-M SYRUP", category: "Syrups", composition: "Levocetirizine Dihydrochloride 2.5 Mg and Montelukast Sodium 4mg Syrup", icon: "fluid_med" },
+        { id: 11, name: "UT FINE SYRUP", category: "Syrups", composition: "Potassium Magnesium Citrate, D-Mannose & Cranberry Extract", icon: "fluid_med" },
+        { id: 12, name: "NASOLUX", category: "Drops", composition: "Sodium Chloride Nasal Drop's IP", icon: "water_drop" },
+        { id: 13, name: "Adoxone 1gm", category: "Injections", composition: "Ceftriaxone Sodium Injection IP 1000 Mg", icon: "vaccines" },
+        { id: 14, name: "Razone-SB", category: "Injections", composition: "Cefoperazone + Sulbactam 1.5 gm Injection", icon: "vaccines" },
+        { id: 15, name: "Nomol", category: "Infusions", composition: "Paracetamol Infusion Ip (1.0% W/v) 1000mcg/100ml", icon: "medical_services" },
+        { id: 16, name: "PANUX-40 IV", category: "Injections", composition: "Pantoprazole for injection bp 40 mg/vial", icon: "vaccines" }
+      ];
+
+      const grid = document.getElementById('product-grid');
+      const searchInput = document.getElementById('search-input');
+      const categoryPills = document.querySelectorAll('.category-pill');
+      const emptyState = document.getElementById('empty-state');
+      const resultCount = document.getElementById('result-count');
+
+      let currentCategory = 'ALL';
+      let searchQuery = '';
+
+      function resetFilters() {
+        searchInput.value = '';
+        searchQuery = '';
+        currentCategory = 'ALL';
+        categoryPills.forEach(p => p.classList.remove('active'));
+        categoryPills[0].classList.add('active');
+        renderProducts();
+      }
+
+      function renderProducts() {
+        const filtered = products.filter(p => {
+          const matchesCategory = currentCategory === 'ALL' || p.category === currentCategory;
+          const matchesSearch = p.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                               p.composition.toLowerCase().includes(searchQuery.toLowerCase());
+          return matchesCategory && matchesSearch;
+        });
+
+        resultCount.textContent = filtered.length;
+        const existingCards = document.querySelectorAll('.product-card');
+        
+        const updateGrid = () => {
+          grid.innerHTML = filtered.map((p, idx) => {
+            const colors = categoryColors[p.category] || categoryColors['Tablets'];
+            return `
+            <div class="product-card bg-white rounded-2xl p-4 md:p-5 flex flex-col gap-3 md:gap-4 border border-surface-variant/40 opacity-0 translate-y-4" data-id="${p.id}">
+              <div class="relative z-10 flex flex-col sm:flex-row items-start sm:items-center sm:justify-between gap-2 sm:gap-0">
+                <div class="card-icon-wrap w-9 h-9 md:w-11 md:h-11 rounded-xl ${colors.iconBg} flex items-center justify-center transition-colors duration-300">
+                  <span class="material-symbols-outlined text-[18px] md:text-[20px] ${colors.text} transition-colors duration-300">${p.icon}</span>
+                </div>
+                <span class="text-[9px] md:text-[10px] uppercase tracking-wider font-bold ${colors.text} px-2 py-1 md:px-2.5 md:py-1 rounded-full ${colors.bg} border ${colors.border}">${p.category}</span>
+              </div>
+              <div class="relative z-10 flex-1">
+                <h3 class="text-sm md:text-base font-bold font-headline-lg text-on-surface mb-1 md:mb-1.5 leading-snug">${p.name}</h3>
+                <p class="text-[11px] md:text-[13px] text-on-surface/45 leading-relaxed line-clamp-3">${p.composition}</p>
+              </div>
+              <div class="relative z-10 mt-auto pt-3 border-t border-surface-variant/30 flex items-center justify-between">
+                <span class="text-[10px] md:text-[11px] text-on-surface/25 font-mono">#${String(p.id).padStart(3, '0')}</span>
+                <span class="card-arrow material-symbols-outlined text-primary text-[16px] md:text-[18px] opacity-0 transition-all duration-300">arrow_forward</span>
+              </div>
+            </div>
+          `}).join('');
+
+          if (filtered.length === 0) {
+            emptyState.classList.remove('hidden');
+            grid.classList.add('hidden');
+          } else {
+            emptyState.classList.add('hidden');
+            grid.classList.remove('hidden');
+            
+            gsap.to(".product-card", {
+              opacity: 1,
+              y: 0,
+              duration: 0.5,
+              stagger: 0.04,
+              ease: "power3.out"
+            });
+          }
+        };
+
+        if (existingCards.length > 0) {
+          gsap.to(".product-card", {
+            opacity: 0,
+            y: -8,
+            scale: 0.97,
+            duration: 0.2,
+            stagger: 0.015,
+            onComplete: updateGrid
+          });
+        } else {
+          updateGrid();
+        }
+      }
+
+      // Initial Load Animation
+      window.onload = () => {
+        gsap.from("#hero-text", { opacity: 0, y: 40, duration: 0.8, ease: "power3.out" });
+        gsap.from("#filter-bar", { opacity: 0, y: 20, duration: 0.8, delay: 0.15, ease: "power3.out" });
+        gsap.from("#results-bar", { opacity: 0, duration: 0.6, delay: 0.3 });
+        renderProducts();
+      };
+
+      // Event Listeners
+      let searchDebounce;
+      searchInput.addEventListener('input', (e) => {
+        clearTimeout(searchDebounce);
+        searchDebounce = setTimeout(() => {
+          searchQuery = e.target.value;
+          renderProducts();
+        }, 150);
+      });
+
+      categoryPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          categoryPills.forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+          currentCategory = pill.dataset.category;
+          renderProducts();
+        });
+      });
+    </script>
+  </body>
+</html>
