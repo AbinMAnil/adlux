@@ -212,7 +212,120 @@
       .hamburger.active .hamburger-line:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -5px);
       }
-    </style>
+    
+      .glassmorphism {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.4);
+      }
+      .soft-shadow {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      }
+
+      /* Product card */
+      .product-card {
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .product-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+
+      /* Category pills */
+      .category-pill {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+      .category-pill::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: #006b2e;
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+      }
+      .category-pill:hover::after {
+        width: 60%;
+      }
+      .category-pill.active {
+        background-color: #006b2e !important;
+        color: white !important;
+        box-shadow: 0 8px 20px rgba(0, 107, 46, 0.25);
+        transform: translateY(-1px);
+      }
+      .category-pill:active {
+        transform: scale(0.96);
+      }
+
+      /* Search input */
+      .search-wrap:focus-within {
+        box-shadow: 0 0 0 3px rgba(0, 107, 46, 0.1);
+        border-color: rgba(0, 107, 46, 0.3);
+      }
+      .search-wrap:focus-within .search-icon {
+        color: #006b2e;
+      }
+
+      /* Counter badge */
+      .count-badge {
+        min-width: 22px;
+        height: 22px;
+        font-size: 11px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Scrollbar hide */
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      /* Mobile Nav */
+      .mobile-nav-overlay {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .mobile-nav-overlay.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      .hamburger-line {
+        width: 22px;
+        height: 2px;
+        background: #191c1e;
+        transition: all 0.3s ease;
+        border-radius: 2px;
+      }
+      .hamburger.active .hamburger-line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      .hamburger.active .hamburger-line:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger.active .hamburger-line:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+    
+</style>
   </head>
 
   <body class="bg-background text-on-surface font-body-md antialiased">
@@ -369,10 +482,11 @@
               <h1
                 class="text-5xl md:text-[4rem] lg:text-[4rem] font-headline-lg font-light italic text-on-surface tracking-tight leading-[1.2]"
               >
-                Beyond the <span style="color: #047857">Pill</span>,<br />
-                Your Caring
+                Welcome <span style="color: #047857">to</span>,<br />
+
                 <span>
-                  <span style="color: #047857">Pharmacy</span>
+                  <span style="color: #047857">Adlux</span>
+                  Pharmaceuticals
                   <span
                     class="inline-block align-middle mx-2 md:mx-4 w-24 md:w-32 h-10 md:h-16 rounded-full overflow-hidden border border-glass-stroke soft-shadow bg-surface-variant/20"
                   >
@@ -384,7 +498,7 @@
                   </span>
                   <a
                     href="products.html"
-                    class="inline-flex items-center align-middle h-10 md:h-16 px-4 md:px-6 rounded-full border border-glass-stroke soft-shadow bg-white hover:bg-mint-green/30 transition-colors cursor-pointer group mt-4 md:mt-0"
+                    class="inline-flex items-center align-middle h-10 md:h-16 px-4 md:px-6 rounded-full border border-glass-stroke soft-shadow bg-white hover:bg-mint-green/30 transition-colors cursor-pointer group"
                   >
                     <span
                       class="font-sans text-xs md:text-sm font-medium not-italic tracking-normal text-on-surface whitespace-nowrap"
@@ -455,18 +569,18 @@
                   <img
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuA96gDrZSc4qLZFT7n_nQp5PDR1xl6YbW092ILW0VjCKvR8WeOLYK3JXWSLhC0i8BiRcb_gQ833ewBnL-U2-2iT65kmHDhh3yXG7hY4j-Oxi4yGCC8UbYQdxHWJLpalvigyicBkLJXb06dt7POaMaVaeMiO3YG8HJQg9Bz828WAZUhw9z942a9E_3HPU0mYBpk0CCcAM9-6aZDXbPSD3IQquU1_rV5eR5jsVOM5i9ku355_gR6jsOS7hFGOf9aBbsMFchu-ay3FPRA"
                     class="w-14 h-14 md:w-16 md:h-16 rounded-xl object-cover"
-                    alt="Dr. Wasly Morgan"
+                    alt="Mohammed Abdulbaise"
                   />
                   <div>
                     <h4
                       class="font-headline-md text-sm md:text-label-md text-on-surface font-bold"
                     >
-                      Dr. Wasly Morgan
+                      Mohammed Abdulbaise
                     </h4>
                     <p
                       class="text-[11px] md:text-[12px] text-on-surface-variant"
                     >
-                      Cardiologist
+                      Managing Partner
                     </p>
                     <div
                       class="flex gap-2 md:gap-4 mt-2 text-[10px] md:text-[11px] text-on-surface-variant"
@@ -523,18 +637,18 @@
                   <img
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4mi_imjpBswdZjBGKLsIygPKKqc-tVuGUDIJD-WM4_Pr3jAhZQX38VrPm-07JYic5R-1GaclfAR27ZUyZK_PWAzotH0HI2T8A80B5k9gyRtOJXpUNirV2NAb3mXmVMTXWmR1zqsToMggZ3Tc6Ru0izIT8dCX4juoX2B1jtmUKvSpBywyJKODsUAGouripv9903YT-80_xJGFgqfhAQzN9nfB4qwWIk9zYSwJ0HeG5Y-XW9C2jxs-wAgM-O8n7LzeIpnLiy0blOl8"
                     class="w-14 h-14 md:w-16 md:h-16 rounded-xl object-cover"
-                    alt="Dr. Michael Thompson"
+                    alt="Pranav Swaminathan"
                   />
                   <div>
                     <h4
                       class="font-headline-md text-sm md:text-label-md text-on-surface font-bold"
                     >
-                      Dr. Michael Thompson
+                      Pranav Swaminathan
                     </h4>
                     <p
                       class="text-[11px] md:text-[12px] text-on-surface-variant"
                     >
-                      Oncologist
+                      Designated Partner
                     </p>
                     <div
                       class="flex gap-2 md:gap-4 mt-2 text-[10px] md:text-[11px] text-on-surface-variant"
@@ -623,9 +737,8 @@
 
                 <!-- Paragraph -->
                 <p class="text-[14px] text-on-surface-variant leading-relaxed">
-                  Our service goes beyond just providing medication. We offer
-                  holistic health solutions, including advice and support, to
-                  enhance your quality of life and overall wellness.
+                  Since 2 years Kerala based company. <br />
+                  High quality medicines at affordable costs.
                 </p>
               </div>
 
@@ -634,8 +747,8 @@
                 <h3
                   class="font-headline-lg text-3xl font-medium max-w-[180px] leading-tight text-on-surface"
                 >
-                  Health in Every <br />
-                  Dose
+                  Connect ASAP <br />
+                  for the medicines
                 </h3>
                 <a
                   href="products.html"
@@ -729,120 +842,155 @@
               quality care is accessible to all.
             </p>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            <!-- Product Card 1 -->
+
+          <!-- Sticky Filter Bar -->
+          <div class="sticky top-24 md:top-28 z-40 mb-10" id="filter-bar">
             <div
-              class="md:col-span-2 lg:col-span-2 bg-white rounded-2xl p-8 soft-shadow border border-glass-stroke flex flex-col justify-between action-hover min-h-[320px]"
+              class="bg-white/90 backdrop-blur-xl rounded-2xl md:rounded-full p-3 md:p-3 shadow-lg shadow-black/[0.03] border border-surface-variant/50"
             >
-              <div>
-                <div class="flex justify-between items-start mb-6">
-                  <div
-                    class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary"
-                  >
-                    <span class="material-symbols-outlined text-4xl">pill</span>
-                  </div>
+              <div class="flex flex-col md:flex-row items-center gap-3">
+                <!-- Search -->
+                <div
+                  class="search-wrap relative w-full md:w-72 lg:w-80 border border-surface-variant/60 rounded-full transition-all bg-white"
+                >
                   <span
-                    class="bg-mint-green text-primary px-3 py-1 rounded-full text-[12px] font-bold"
-                    >TOP RATED</span
+                    class="search-icon material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface/30 text-[20px] transition-colors"
+                    >search</span
                   >
+                  <input
+                    type="text"
+                    id="search-input"
+                    placeholder="Search products..."
+                    class="w-full pl-10 pr-4 py-3 rounded-full border-none bg-transparent focus:ring-0 text-sm outline-none placeholder:text-on-surface/30"
+                  />
                 </div>
-                <h3 class="font-headline-md text-headline-md mb-2">
-                  Tablets &amp; Capsules
-                </h3>
-                <p class="text-on-surface-variant text-body-md">
-                  Advanced formulation for maximum bioavailability and patient
-                  compliance.
-                </p>
-              </div>
-              <a
-                class="mt-6 flex items-center gap-2 text-primary font-bold text-label-md group"
-                href="#"
-              >
-                View Category
-                <span
-                  class="material-symbols-outlined group-hover:translate-x-1 transition-transform"
-                  >arrow_forward</span
+
+                <!-- Divider -->
+                <div class="hidden md:block w-px h-7 bg-surface-variant/60"></div>
+
+                <!-- Category Pills (horizontal scroll on mobile) -->
+                <div
+                  class="flex items-center gap-2 overflow-x-auto hide-scrollbar w-full md:w-auto -mx-3 px-3 md:mx-0 md:px-0 pb-1 md:pb-0"
+                  id="category-filters"
                 >
-              </a>
-            </div>
-            <!-- Product Card 2 -->
-            <div
-              class="bg-white rounded-2xl p-8 soft-shadow border border-glass-stroke action-hover"
-            >
-              <div
-                class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center text-secondary mb-6"
-              >
-                <span class="material-symbols-outlined text-3xl">vaccines</span>
-              </div>
-              <h3 class="font-headline-md text-headline-md mb-2">
-                Injectables
-              </h3>
-              <p class="text-on-surface-variant text-sm">
-                Sterile manufacturing in ISO Class 5 environments.
-              </p>
-            </div>
-            <!-- Product Card 3 -->
-            <div
-              class="bg-white rounded-2xl p-8 soft-shadow border border-glass-stroke action-hover"
-            >
-              <div
-                class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center text-secondary mb-6"
-              >
-                <span class="material-symbols-outlined text-3xl"
-                  >medication</span
-                >
-              </div>
-              <h3 class="font-headline-md text-headline-md mb-2">
-                Liquid Syrups
-              </h3>
-              <p class="text-on-surface-variant text-sm">
-                Palatable formulations for pediatric and geriatric care.
-              </p>
-            </div>
-            <!-- Product Card 4 -->
-            <div
-              class="bg-white rounded-2xl p-8 soft-shadow border border-glass-stroke action-hover"
-            >
-              <div
-                class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center text-secondary mb-6"
-              >
-                <span class="material-symbols-outlined text-3xl">science</span>
-              </div>
-              <h3 class="font-headline-md text-headline-md mb-2">API Supply</h3>
-              <p class="text-on-surface-variant text-sm">
-                High-purity active pharmaceutical ingredients for global
-                partners.
-              </p>
-            </div>
-            <!-- Product Card 5 (Large Featured) -->
-            <div
-              class="md:col-span-3 lg:col-span-3 bg-primary-container text-white rounded-2xl p-8 flex flex-col md:flex-row gap-8 items-center action-hover"
-            >
-              <div class="flex-1 space-y-4">
-                <h3 class="font-headline-xl text-headline-md">
-                  Custom Formulation Services
-                </h3>
-                <p class="opacity-90">
-                  Partner with our R&amp;D team to develop specialized
-                  pharmaceutical solutions tailored to specific market needs.
-                </p>
-                <button
-                  class="bg-white text-primary px-6 py-3 rounded-xl font-bold text-label-md"
-                >
-                  Start Collaboration
-                </button>
-              </div>
-              <div class="flex-1 w-full">
-                <img
-                  class="rounded-xl w-full h-48 object-cover border border-white/20"
-                  data-alt="Detailed close up of laboratory vials containing colorful liquids, representing research and development. The background is slightly blurred with bright, professional lighting that emphasizes a high-tech clinical environment."
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKvqT8B6vxrHRjeTGE-mlG-NPgsjCh-KsN96ZCLwL5peezpMP1V0zTnDJ3kEod53UNVVoqlm3Muz3y8G3EtHexovSJAWMKO8Cs0knoe25M0ELCfPae4u1AUV2m8iNb2qJmlSZgTRwc_5ng_wzD80_CJK7EzYU3Uy-tcQ7aR8L-0cWIKLTHOoohtW9Jq2D2bqjKNkihF5CByqedkvvnSASHxiHYnPvvGu6IuxQcvnS-QIApZ_APZ-75CzYzQwCj3Io5WglRS-NExQE"
-                />
+                  <button
+                    class="category-pill active px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-surface-variant/20 hover:bg-surface-variant/40 transition-all"
+                    data-category="ALL"
+                  >
+                    All
+                    <span
+                      class="count-badge bg-white/40 rounded-full ml-1.5 px-2 py-0.5"
+                      id="count-all"
+                      >16</span
+                    >
+                  </button>
+                  <button
+                    class="category-pill px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-surface-variant/20 hover:bg-surface-variant/40 transition-all"
+                    data-category="Tablets"
+                  >
+                    Tablets
+                    <span
+                      class="count-badge bg-primary/10 text-primary rounded-full ml-1.5 px-2 py-0.5"
+                      >7</span
+                    >
+                  </button>
+                  <button
+                    class="category-pill px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-surface-variant/20 hover:bg-surface-variant/40 transition-all"
+                    data-category="Syrups"
+                  >
+                    Syrups
+                    <span
+                      class="count-badge bg-primary/10 text-primary rounded-full ml-1.5 px-2 py-0.5"
+                      >3</span
+                    >
+                  </button>
+                  <button
+                    class="category-pill px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-surface-variant/20 hover:bg-surface-variant/40 transition-all"
+                    data-category="Injections"
+                  >
+                    Injections
+                    <span
+                      class="count-badge bg-primary/10 text-primary rounded-full ml-1.5 px-2 py-0.5"
+                      >3</span
+                    >
+                  </button>
+                  <button
+                    class="category-pill px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-surface-variant/20 hover:bg-surface-variant/40 transition-all"
+                    data-category="Topical"
+                  >
+                    Topical
+                    <span
+                      class="count-badge bg-primary/10 text-primary rounded-full ml-1.5 px-2 py-0.5"
+                      >1</span
+                    >
+                  </button>
+                  <button
+                    class="category-pill px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-surface-variant/20 hover:bg-surface-variant/40 transition-all"
+                    data-category="Drops"
+                  >
+                    Drops
+                    <span
+                      class="count-badge bg-primary/10 text-primary rounded-full ml-1.5 px-2 py-0.5"
+                      >1</span
+                    >
+                  </button>
+                  <button
+                    class="category-pill px-5 py-2.5 rounded-full text-xs font-bold whitespace-nowrap bg-surface-variant/20 hover:bg-surface-variant/40 transition-all"
+                    data-category="Infusions"
+                  >
+                    Infusions
+                    <span
+                      class="count-badge bg-primary/10 text-primary rounded-full ml-1.5 px-2 py-0.5"
+                      >1</span
+                    >
+                  </button>
+                </div>
               </div>
             </div>
           </div>
+
+          <!-- Results count -->
+          <div
+            class="flex items-center justify-between mb-6 px-1"
+            id="results-bar"
+          >
+            <p class="text-sm text-on-surface/40">
+              <span id="result-count" class="font-semibold text-on-surface"
+                >16</span
+              >
+              products found
+            </p>
+          </div>
+        <!-- Product Grid -->
+        <div
+          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-5"
+          id="product-grid"
+        >
+          <!-- Cards injected by JS -->
         </div>
-      </section>
+
+        <!-- Empty State -->
+        <div id="empty-state" class="hidden py-24 text-center">
+          <div
+            class="w-20 h-20 mx-auto mb-6 rounded-full bg-surface-variant/30 flex items-center justify-center"
+          >
+            <span class="material-symbols-outlined text-4xl text-on-surface/20"
+              >search_off</span
+            >
+          </div>
+          <h3 class="text-xl font-semibold mb-2">No products found</h3>
+          <p class="text-on-surface/40 mb-6">
+            Try adjusting your search or filters
+          </p>
+          <button
+            onclick="resetFilters()"
+            class="text-sm font-semibold text-primary hover:underline"
+          >
+            Clear all filters
+          </button>
+        </div>
+        </div>
+</section>
       <section
         class="py-24 bg-surface-container-lowest overflow-hidden"
         id="trusted"
